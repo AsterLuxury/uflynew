@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="64" viewBox="0 0 256 64">
+  <rect width="256" height="64" rx="8" fill="#0B1D3A"/>
+  <text x="20" y="42" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#C9A84C">Ufly</text>
+  <text x="90" y="42" font-family="Arial, sans-serif" font-size="18" font-weight="300" fill="#FFFFFF" opacity="0.7">TRAVEL</text>
+  <circle cx="210" cy="32" r="18" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+  <path d="M200 32 L220 32 M210 22 L210 42" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="210" cy="32" r="12" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.3"/>
+</svg>

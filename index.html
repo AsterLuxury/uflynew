@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ku" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="site_title">UFLY Travel | Air Travel Agency</title>
+  <meta name="description" content="UFLY Travel - Premium air travel agency offering private jets, commercial flights, and helicopter tours worldwide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@200;300;400;500;600;700;800&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+<body>
+  <!-- Scroll progress bar -->
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <!-- Custom cursor (desktop) -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Noise texture overlay -->
+  <div class="noise" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <filter id="noiseFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+    </svg>
+  </div>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <span>UFLY TRAVEL</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#services" data-i18n="nav_services" data-lang-key="nav_services">Services</a>
+        <a href="#about" data-i18n="nav_about" data-lang-key="nav_about">About</a>
+        <a href="#partners" data-i18n="nav_partners" data-lang-key="nav_partners">Network</a>
+        <a href="#contact" data-i18n="nav_contact" data-lang-key="nav_contact">Contact</a>
+      </div>
+
+      <div class="nav-controls">
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="ku" aria-label="Kurdish">KU</button>
+          <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="ar" aria-label="Arabic">AR</button>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/pexels-164287.jpg">
+      <source src="assets/mixkit-28000.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-light"></div>
+
+    <div class="hero-content">
+      <img src="assets/logo.png" alt="UFLY Travel" class="hero-logo" width="120" height="120" loading="eager">
+      <h1 class="hero-tagline" data-i18n="hero_tagline">Fly<br>Beyond</h1>
+      <p class="hero-sub" data-i18n="hero_sub">Premium Air Travel · Worldwide · Since 2010</p>
+      <a href="#contact" class="btn btn-primary" data-i18n="hero_cta" data-lang-key="hero_cta">
+        Book Your Flight
+        <span class="btn-shimmer"></span>
+      </a>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span data-i18n="scroll_text">Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ MARQUEE ═══ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-inner" id="marqueeTrack">
+      <span><em>✦</em> Dubai <em>✦</em> London <em>✦</em> Paris <em>✦</em> New York <em>✦</em> Tokyo <em>✦</em> Istanbul <em>✦</em> Dubai <em>✦</em> London <em>✦</em> Paris <em>✦</em> New York <em>✦</em> Tokyo <em>✦</em> Istanbul</span>
+      <span><em>✦</em> Dubai <em>✦</em> London <em>✦</em> Paris <em>✦</em> New York <em>✦</em> Tokyo <em>✦</em> Istanbul <em>✦</em> Dubai <em>✦</em> London <em>✦</em> Paris <em>✦</em> New York <em>✦</em> Tokyo <em>✦</em> Istanbul</span>
+    </div>
+  </div>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header reveal reveal-fadeUp">
+        <span class="section-label" data-i18n="services_label">What We Offer</span>
+        <h2 class="section-title" data-i18n="services_title">Premium Flight<br>Services</h2>
+        <p class="section-subtitle" data-i18n="services_sub">From private charters to commercial bookings, we handle every detail of your journey with excellence.</p>
+      </div>
+
+      <div class="services-grid stagger-children" id="serviceCards">
+        <article class="service-card stagger-item reveal reveal-fadeUp" data-tilt>
+          <div class="service-card-bg">
+            <img src="assets/pexels-417173.jpg" alt="Private Jets" loading="lazy">
+          </div>
+          <div class="service-card-gradient"></div>
+          <div class="service-card-glass"></div>
+          <div class="service-card-shimmer"></div>
+          <div class="service-card-content">
+            <div class="service-card-icon">✈️</div>
+            <h3 data-i18n="service_1_title">Private Jets</h3>
+            <p data-i18n="service_1_desc">Luxury private charters tailored to your schedule. Fly on your terms with world-class cabin service.</p>
+          </div>
+        </article>
+
+        <article class="service-card stagger-item reveal reveal-fadeUp" data-tilt>
+          <div class="service-card-bg">
+            <img src="assets/pexels-210243.jpg" alt="Commercial Flights" loading="lazy">
+          </div>
+          <div class="service-card-gradient"></div>
+          <div class="service-card-glass"></div>
+          <div class="service-card-shimmer"></div>
+          <div class="service-card-content">
+            <div class="service-card-icon">🌍</div>
+            <h3 data-i18n="service_2_title">Commercial Flights</h3>
+            <p data-i18n="service_2_desc">Best deals on airlines worldwide. First, business, and economy with premium service guarantees.</p>
+          </div>
+        </article>
+
+        <article class="service-card stagger-item reveal reveal-fadeUp" data-tilt>
+          <div class="service-card-bg">
+            <img src="assets/pexels-164287.jpg" alt="Helicopter Tours" loading="lazy">
+          </div>
+          <div class="service-card-gradient"></div>
+          <div class="service-card-glass"></div>
+          <div class="service-card-shimmer"></div>
+          <div class="service-card-content">
+            <div class="service-card-icon">🚁</div>
+            <h3 data-i18n="service_3_title">Helicopter Tours</h3>
+            <p data-i18n="service_3_desc">Breathtaking aerial tours over the most stunning landscapes and city skylines on earth.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS VIDEO SECTION ═══ -->
+  <section class="stats-section" id="about">
+    <video class="stats-video" autoplay muted loop playsinline poster="assets/pexels-346529.jpg">
+      <source src="assets/mixkit-27988.mp4" type="video/mp4">
+    </video>
+    <div class="stats-overlay"></div>
+
+    <div class="container stats-content">
+      <div class="stat-item reveal reveal-scale">
+        <div class="stat-number" data-count="10"><span class="plus">+</span></div>
+        <span class="stat-label" data-i18n="stat_1">Countries</span>
+      </div>
+      <div class="stat-item reveal reveal-scale">
+        <div class="stat-number" data-count="5000"><span class="plus">+</span></div>
+        <span class="stat-label" data-i18n="stat_2">Happy Travelers</span>
+      </div>
+      <div class="stat-item reveal reveal-scale">
+        <div class="stat-number" data-count="50"><span class="plus">+</span></div>
+        <span class="stat-label" data-i18n="stat_3">Aircraft</span>
+      </div>
+      <div class="stat-item reveal reveal-scale">
+        <div class="stat-number" data-count="15"><span class="plus">+</span></div>
+        <span class="stat-label" data-i18n="stat_4">Years Experience</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VIDEO DIVIDER ═══ -->
+  <div class="video-divider">
+    <video autoplay muted loop playsinline poster="assets/pexels-346529.jpg">
+      <source src="assets/mixkit-4204.mp4" type="video/mp4">
+    </video>
+    <div class="video-divider-overlay"></div>
+    <div class="video-divider-content reveal reveal-fadeUp">
+      <h2 data-i18n="divider_text">Your Journey Begins Here</h2>
+    </div>
+  </div>
+
+  <!-- ═══ GALLERY ═══ -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal reveal-fadeUp">
+        <span class="section-label" data-i18n="gallery_label">Destinations</span>
+        <h2 class="section-title" data-i18n="gallery_title">Where We<br>Take You</h2>
+        <p class="section-subtitle" data-i18n="gallery_sub">Explore our curated collection of destinations — from pristine beaches to soaring mountain peaks.</p>
+      </div>
+
+      <div class="gallery-grid stagger-children" id="galleryGrid">
+        <figure class="gallery-item stagger-item reveal reveal-scale">
+          <img src="assets/pexels-164287.jpg" alt="Mountain Landscape" loading="lazy">
+          <figcaption class="gallery-item-overlay">
+            <span class="gallery-item-title" data-i18n="gallery_1">Swiss Alps</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item stagger-item reveal reveal-fadeUp">
+          <img src="assets/pexels-346529.jpg" alt="Sunset Flight" loading="lazy">
+          <figcaption class="gallery-item-overlay">
+            <span class="gallery-item-title" data-i18n="gallery_2">Sunset Horizon</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item stagger-item reveal reveal-fadeUp">
+          <img src="assets/pexels-258154.jpg" alt="Beach Coast" loading="lazy">
+          <figcaption class="gallery-item-overlay">
+            <span class="gallery-item-title" data-i18n="gallery_3">Maldives Coast</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item stagger-item reveal reveal-fadeUp">
+          <img src="assets/pexels-266797.jpg" alt="City Skyline" loading="lazy">
+          <figcaption class="gallery-item-overlay">
+            <span class="gallery-item-title" data-i18n="gallery_4">Dubai Marina</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item stagger-item reveal reveal-fadeUp">
+          <img src="assets/pexels-924824.jpg" alt="Airport Terminal" loading="lazy">
+          <figcaption class="gallery-item-overlay">
+            <span class="gallery-item-title" data-i18n="gallery_5">Grand Terminal</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item stagger-item reveal reveal-fadeUp">
+          <img src="assets/pexels-1450353.jpg" alt="Desert Landscape" loading="lazy">
+          <figcaption class="gallery-item-overlay">
+            <span class="gallery-item-title" data-i18n="gallery_6">Sahara Dunes</span>
+          </figcaption>
+        </figure>
+        <figure class="gallery-item stagger-item reveal reveal-scale">
+          <img src="assets/pexels-1103970.jpg" alt="Travel Gear" loading="lazy">
+          <figcaption class="gallery-item-overlay">
+            <span class="gallery-item-title" data-i18n="gallery_7">Ready for Adventure</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PARTNERS ═══ -->
+  <section class="section" id="partners">
+    <div class="container">
+      <div class="section-header reveal reveal-fadeUp">
+        <span class="section-label" data-i18n="partners_label">Trusted By</span>
+        <h2 class="section-title" data-i18n="partners_title">Our Network</h2>
+        <p class="section-subtitle" data-i18n="partners_sub">We partner with the world's leading airlines and aviation services to bring you the best.</p>
+      </div>
+
+      <div class="partners-grid stagger-children">
+        <div class="partner-logo-card stagger-item reveal reveal-fadeUp" data-magnetic><span>Qatar</span></div>
+        <div class="partner-logo-card stagger-item reveal reveal-fadeUp" data-magnetic><span>Emirates</span></div>
+        <div class="partner-logo-card stagger-item reveal reveal-fadeUp" data-magnetic><span>Turkish</span></div>
+        <div class="partner-logo-card stagger-item reveal reveal-fadeUp" data-magnetic><span>British</span></div>
+        <div class="partner-logo-card stagger-item reveal reveal-fadeUp" data-magnetic><span>Lufthansa</span></div>
+        <div class="partner-logo-card stagger-item reveal reveal-fadeUp" data-magnetic><span>Etihad</span></div>
+        <div class="partner-logo-card stagger-item reveal reveal-fadeUp" data-magnetic><span>Singapore</span></div>
+        <div class="partner-logo-card stagger-item reveal reveal-fadeUp" data-magnetic><span>Air France</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal reveal-fadeUp">
+        <span class="section-label" data-i18n="contact_label">Get In Touch</span>
+        <h2 class="section-title" data-i18n="contact_title">Let's Plan Your<br>Next Flight</h2>
+        <p class="section-subtitle" data-i18n="contact_sub">Ready to fly? Send us your details and our team will get back to you within 24 hours.</p>
+      </div>
+
+      <div class="contact-section reveal reveal-fadeUp">
+        <div class="contact-visual">
+          <img src="assets/pexels-1450353.jpg" alt="Contact UFLY Travel" loading="lazy">
+          <div class="contact-visual-overlay">
+            <h3 data-i18n="contact_quote">"The sky is<br>not the limit"</h3>
+            <p data-i18n="contact_author">— UFLY Travel</p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form id="contactForm" class="form-grid">
+            <div class="form-group">
+              <label for="name" data-i18n="form_name">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="form_email">Email</label>
+              <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" data-i18n="form_phone">Phone</label>
+              <input type="tel" id="phone" class="form-control" placeholder="+964 XXX XXX XXXX">
+            </div>
+            <div class="form-group">
+              <label for="destination" data-i18n="form_dest">Destination</label>
+              <input type="text" id="destination" class="form-control" placeholder="Where are you flying?">
+            </div>
+            <div class="form-group full">
+              <label for="message" data-i18n="form_message">Message</label>
+              <textarea id="message" class="form-control" placeholder="Tell us about your travel needs..." rows="4"></textarea>
+            </div>
+            <div class="form-group full">
+              <button type="submit" class="btn btn-primary" data-i18n="form_submit">
+                Send Message
+                <span class="btn-shimmer"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" style="justify-content: flex-start;">
+            <img src="assets/logo.png" alt="UFLY Travel" width="28" height="28">
+            <span>UFLY</span>
+          </a>
+          <p data-i18n="footer_desc">Premium air travel agency connecting you to the world. Private jets, commercial flights, and helicopter tours across the globe.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" data-magnetic>📷</a>
+            <a href="#" aria-label="Telegram" data-magnetic>✈️</a>
+            <a href="#" aria-label="Facebook" data-magnetic>👍</a>
+            <a href="#" aria-label="WhatsApp" data-magnetic>💬</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer_services">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#" data-i18n="footer_s1">Private Jets</a></li>
+            <li><a href="#" data-i18n="footer_s2">Commercial Flights</a></li>
+            <li><a href="#" data-i18n="footer_s3">Helicopter Tours</a></li>
+            <li><a href="#" data-i18n="footer_s4">Airport Transfers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer_company">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#" data-i18n="footer_c1">About Us</a></li>
+            <li><a href="#" data-i18n="footer_c2">Our Team</a></li>
+            <li><a href="#" data-i18n="footer_c3">Careers</a></li>
+            <li><a href="#" data-i18n="footer_c4">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer_support">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#" data-i18n="footer_sup1">FAQ</a></li>
+            <li><a href="#" data-i18n="footer_sup2">Privacy Policy</a></li>
+            <li><a href="#" data-i18n="footer_sup3">Terms of Service</a></li>
+            <li><a href="#" data-i18n="footer_sup4">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="footer_copy">© 2026 UFLY Travel. All rights reserved.</span>
+        <span data-i18n="footer_tagline">Made for those who fly beyond</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ WHATSAPP FLOAT ═══ -->
+  <a href="https://wa.me/" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">💬</a>
+
+  <!-- ═══ BACK TO TOP ═══ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script src="js/i18n.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
